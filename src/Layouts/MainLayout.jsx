@@ -9,7 +9,7 @@ const MainLayout = () => {
   return (
     <div>
       <div>
-        <Navbar></Navbar>
+       <div className="h-16"> <Navbar></Navbar></div>
         {/* packet */}
         <div className="min-h-[calc(100vh-116px)]">
         <Outlet></Outlet>
