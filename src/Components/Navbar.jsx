@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("light")
 
-  useEffect(() =>)
-
+  useEffect(() => {
+    localStorage.setItem("theme", theme)
+    const localTheme = localStorage.getItem('theme')
+    document.querySelector('html').setAttribute('data-theme', localTheme)
+  }, [theme]);
 
   const handleToggle = (e) => {
     if (e.target.checked) {
