@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState(localStorage.getItem('data-theme') ||'light');
 
   useEffect(() => {
     localStorage.setItem("theme", theme)
@@ -9,7 +10,8 @@ const Navbar = () => {
     document.querySelector('html').setAttribute('data-theme', localTheme)
   }, [theme]);
 
-  const handleToggle = (e) => {
+  const handleToggle = e => {
+    // console.log(e.target.value);
     if (e.target.checked) {
       setTheme("synthwave");
     } else {
@@ -20,24 +22,27 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
       <div className="flex-1 ">
-        <a className="btn btn-ghost font-bold gap-0 text-secondary normal-case text-2xl">
-          Byte<span className="text-primary">Blaze</span>
-        </a>
+        <Link to="/" className="btn btn-ghost font-bold gap-0 text-secondary normal-case text-2xl">
+          Byte<span  className="text-primary">Blaze</span>
+        </Link>
       </div>
       <div className="flex-none">
-        <ul className="font-bold menu menu-horizontal px-1">
-          <li>
-            <a>Home</a>
-          </li>
-          <li className="text-primary">
-            <a>Blogs</a>
-          </li>
-          <li>
-            <a>Bookmarks</a>
-          </li>
+        <ul className="items-center  font-bold menu menu-horizontal px-1 hidden sm:flex gap-5">
+          <NavLink to="/" className={({isActive}) => isActive? 'text-primary font-bold': 'font-bold' }>
+            Home
+          </NavLink>
+
+          <NavLink to="/blogs" className={({isActive}) => isActive? 'text-primary font-bold': 'font-bold' }>
+            Blog
+          </NavLink>
+          
+          <NavLink to="/bookmarks" className={({isActive}) => isActive? 'text-primary font-bold': 'font-bold' }>
+            Bookmarks
+          </NavLink>
         </ul>
         <label className="cursor-pointer grid place-items-center">
           <input
+          checked={theme === 'light' ? false : true}
             onChange={handleToggle}
             type="checkbox"
             className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
