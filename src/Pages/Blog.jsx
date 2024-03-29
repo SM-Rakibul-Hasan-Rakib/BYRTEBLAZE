@@ -76,8 +76,8 @@ const Blog = () => {
               </svg>
               <span>Author</span>
             </Link>
-            <Link
-              onClick={() => setTabIndex(1)}
+            {/* <Link
+              onClick={() => setTabIndex(2)}
               //  to={`author`}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
                 tabIndex === 2 ? "border border-b-0" : "border-b"
@@ -97,7 +97,7 @@ const Blog = () => {
                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
               </svg>
               <span>Author</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="dark:text-gray-800">
