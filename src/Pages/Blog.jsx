@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Blog = () => {
-  const [tabIndex, setIndex] = useState(0);
+  const [tabIndex, setTabIndex] = useState(0);
   const blog = useLoaderData();
   const {
     comments_count,
