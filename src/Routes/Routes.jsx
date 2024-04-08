@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-      },
+      },gfg
       {
         path: "/blogs",
         // element: <App></App>
