@@ -5,6 +5,7 @@ const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const blog = useLoaderData();
   const {
+    tags,
     comments_count,
     title,
     reading_time_minutes,
@@ -103,30 +104,35 @@ const Blog = () => {
         <div className="dark:text-gray-800">
           <p>Insert the actual text content here...</p>
         </div>
+        {/* <Outlet></Outlet> */}
       </article>
       <div>
         <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
-          >
-            #MambaUI
-          </a>
-          <a
+          {tags.map(tags=> 
+          <a key={tags}
+          rel="noopener noreferrer"
+          href="#"
+          className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
+        >
+          {tags}
+          {/* #MambaUI */}
+         </a> 
+          )}
+          
+          {/* <a
             rel="noopener noreferrer"
             href="#"
             className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
           >
             #TailwindCSS
-          </a>
-          <a
+          </a> */} 
+          {/* <a
             rel="noopener noreferrer"
             href="#"
             className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
           >
             #Angular
-          </a>
+          </a> */}
         </div>
         <div className="space-y-2">
           <h4 className="text-lg font-semibold">Related posts</h4>
