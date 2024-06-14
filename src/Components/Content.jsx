@@ -1,11 +1,12 @@
-
+import { useLoaderData } from "react-router-dom";
 
 const Content = () => {
   const blog = useLoaderData();
+  console.log(blog);
   return (
-    <div>
+    <section>
       <h1>ami akjon content</h1>
-    </div>
+    </section>
   );
 };
 

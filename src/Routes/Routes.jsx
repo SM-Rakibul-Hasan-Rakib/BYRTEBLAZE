@@ -1,11 +1,11 @@
- import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layouts/MainLayout";
-import Blog from "../Pages/Blog";
-import Blogs from "../Pages/Blogs";
-import Bookmark from "../Pages/Bookmark";
 import Home from "../Pages/Home";
+import Blogs from "../Pages/Blogs";
+import Blog from "../Pages/Blog";
 import Content from "../Components/Content";
 import Author from "../Components/Author";
+import Bookmark from "../Pages/Bookmark";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-      },gfg
+      },
       {
         path: "/blogs",
         // element: <App></App>
