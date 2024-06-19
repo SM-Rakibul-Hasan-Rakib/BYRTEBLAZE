@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -34,7 +34,7 @@ const Blog = () => {
 
           <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
             <Link
-              // to=''
+              to=""
               onClick={() => setTabIndex(0)}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
                 tabIndex === 0 ? "border border-b-0" : "border-b"
@@ -57,7 +57,7 @@ const Blog = () => {
 
             <Link
               onClick={() => setTabIndex(1)}
-              //  to={`author`}
+              to={`author`}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
                 tabIndex === 1 ? "border border-b-0" : "border-b"
               } rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
@@ -77,55 +77,34 @@ const Blog = () => {
               </svg>
               <span>Author</span>
             </Link>
-            {/* <Link
-              onClick={() => setTabIndex(2)}
-              //  to={`author`}
-              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                tabIndex === 2 ? "border border-b-0" : "border-b"
-              } rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-4 h-4"
-              >
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-              </svg>
-              <span>Author</span>
-            </Link> */}
           </div>
         </div>
         <div className="dark:text-gray-800">
           <p>Insert the actual text content here...</p>
         </div>
-        {/* <Outlet></Outlet> */}
+        <Outlet></Outlet>
       </article>
       <div>
         <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
-          {tags.map(tags=> 
-          <a key={tags}
-          rel="noopener noreferrer"
-          href="#"
-          className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
-        >
-          {tags}
-          {/* #MambaUI */}
-         </a> 
-          )}
-          
+          {tags.map((tags) => (
+            <a
+              key={tags}
+              rel="noopener noreferrer"
+              href="#"
+              className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
+            >
+              {tags}
+              {/* #MambaUI */}
+            </a>
+          ))}
+
           {/* <a
             rel="noopener noreferrer"
             href="#"
             className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
           >
             #TailwindCSS
-          </a> */} 
+          </a> */}
           {/* <a
             rel="noopener noreferrer"
             href="#"
